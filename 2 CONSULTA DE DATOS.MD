@@ -4,11 +4,13 @@ Primera sentencia/palabra reservada es `SELECT`, esta sentencia sirve para selec
 
 Al llamar a esta sentencia se seleccionan todos los datos que se indiquen, esto manteniendo el llamado mediante la siguiente estructura:
 
-`SELECT <cols> FROM <table name>;`
+```SQL
+SELECT <cols> FROM <table name>;
+```
 
 cols: indica que columnas se seleccionaran ej:
 
-```
+```SQL
 SELECT c1,..,cn FROM table_x;
 
 o

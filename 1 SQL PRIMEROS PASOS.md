@@ -135,7 +135,7 @@ Existen varias caracteristicas que determinaran el comportamiento de la columna:
 
 ## Ejemplo de uso
 
-```
+```SQL
 CREATE TABLE usuarios (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(50) NOT NULL,

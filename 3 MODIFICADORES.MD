@@ -5,7 +5,7 @@ En SQL existen diferentes sentencias que modifican el comportamiento de una cons
 ## DISTINCT
 
 #### sintaxis:
-```
+```SQL
 SELECT DISTINCT <cols> FROM <table>;
 ```
 El modificador `DISTINCT` se usa para eliminar duplicados en las consultas, ej:
@@ -20,7 +20,7 @@ El modificador `DISTINCT` se usa para eliminar duplicados en las consultas, ej:
 
 Si queremos saber que paises existen en la tabla hacemos:
 
-```
+```SQL
 SELECT DISTINCT pais FROM ciudades;
 ```
 
@@ -35,8 +35,8 @@ esto retornara:
 
 ## WHERE
 
-#### sintaxis:
-```
+### sintaxis:
+```SQL
 SELECT <cols>
 FROM <table>
 WHERE <conditional statement>;
@@ -53,7 +53,7 @@ Este modificador se encarga de colocar una condicion para poder completar la con
 
 Si aplicamos:
 
-```
+```SQL
 SELECT name,salary 
 FROM employess
 WHERE salary > 2000;
@@ -69,9 +69,23 @@ Esto retornara lo siguiente:
 
 **para tener en cuenta, cada query/consulta temrina cuando se escribre el `;` mas no antes**
 
+Estos son los operadores logicos que se pueden usar con `WHERE`:
+
+|Operator | Description|
+|---|---|
+|=	|Equal	|
+|>	|Greater than	|
+|<	|Less than	|
+|>=	|Greater than or equal|	
+|<=	|Less than or equal	|
+|<>	|Not equal. Note: In some versions of SQL this operator may be written as !=	|
+|BETWEEN	|Between a certain range	|
+|LIKE	|Search for a pattern	|
+|IN	|To specify multiple possible values for a column|
+
 ## ORDER BY
-#### sintaxis:
-```
+### sintaxis:
+```SQL
 SELECT <cols> 
 FROM <table> 
 ORDER BY <col1> DESC|ASC,...., <coln> DESC|ASC;
@@ -86,7 +100,7 @@ Este ordena los datos datos de manera ascendente(`ASC`) o descendente(`DESC`), s
 |Carla|	2500|
 |Neko	|4000|
 
-```
+```SQL
 SELECT name, salary 
 FROM employees 
 ORDER BY salary DESC, name ASC;
@@ -107,7 +121,7 @@ Esto ordenará los resultados por salario de mayor a menor y, si hay empleados c
 ## LIKE
 
 #### sintaxis:
-```
+```SQL
 SELECT <cols> 
 FROM <talbe> 
 WHERE <col> LIKE <'patron'>;
@@ -129,7 +143,7 @@ El modificador `LIKE` se utiliza para buscar un patrón en una columna, generalm
 
 Si queremos encontrar todas las personas cuyo nombre empiece con "Car", podemos hacer:
 
-```
+```SQL
 SELECT nombre 
 FROM personas 
 WHERE nombre LIKE 'Car%';
@@ -149,7 +163,7 @@ esto retorna:
 ## AND
 ### Sintaxis basica:
 
-```
+```SQL
 SELECT <cols>
 FROM <talbe>
 WHERE <condition1> AND <condicion2> AND <conditionn>;
@@ -165,7 +179,7 @@ El modificador `AND` se utiliza para combinar varias condiciones y asegura que t
 
 Si ejecutamos:
 
-```
+```SQL
 SELECT name, salary
 FROM employees
 WHERE salary > 2000 AND department = 'ventas';
@@ -177,10 +191,11 @@ Nos retornara lo siguiente:
 | name | salary | department |
 |Miguel|3000    |ventas      |
 ```
+
 ## OR
 ### Sintaxis basica:
 
-```
+```SQL
 SELECT <cols>
 FROM <talbe>
 WHERE <condition1> OR <condicion2> OR <conditionn>;
@@ -198,7 +213,7 @@ El modificador `OR` se utiliza para combinar varias condiciones, pero basta con 
 
 si ejecutamos:
 
-```
+```SQL
 SELECT name, salary
 FROM employees
 WHERE salary > 2000 OR department = 'ventas';
@@ -216,7 +231,7 @@ Retornara:
 
 ### Sintaxis basica:
 
-```
+```SQL
 SELECT <cols>
 FROM <talbe>
 WHERE NOT <condition>;
@@ -233,7 +248,7 @@ El modificador `NOT` se utiliza para negar una condición, es decir, selecciona 
 
 Si ejecutamos:
 
-```
+```SQL
 SELECT name, salary
 FROM employees
 WHERE NOT salary > 2000;
@@ -251,7 +266,7 @@ Esto rotarna:
 
 ## LIMIT
 ### Sintaxis basica:
-```
+```SQL
 SELECT <cols>
 FROM <tables>
 LIMIT <number or rows> (OFFSET <initial row>);
@@ -271,7 +286,7 @@ El modificador `LIMIT` en SQL se utiliza para restringir la cantidad de filas qu
 
 Si ejecutamos:
 
-```
+```SQL
 SELECT name, salary
 FROM employees
 LIMIT 3;
@@ -288,7 +303,7 @@ Retornara:
 
 Si quisieramos usar un offset, como el sigueinte:
 
-```
+```SQL
 SELECT name, salary
 FROM employees
 LIMIT 2 OFFSET 2;

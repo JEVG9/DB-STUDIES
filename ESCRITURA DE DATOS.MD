@@ -2,7 +2,8 @@
 
 ## INSERT INTO
 ### Sintaxis:
-ˋˋˋSQL
+
+```SQL
 INSERT INTO <table> (col1,...,colN)
 VALUES (val1,...,valN);
 
@@ -11,6 +12,7 @@ or
 INSERT INTO <table> (col1,...,colN)
 <SELECT QUERY)>
 ˋˋˋ
+
 Este comando se usa para poder agregar datos a las filas indicadas,
 El comando se puede usar agregando valores directamente usando
 el elemento ˋVALUEˋ para indicar los valores con parentesis y comas.
@@ -27,6 +29,7 @@ VALUES
     ('Carlos',40),
     ('Neko',19);
 ˋˋˋ
+
 Este ejemplo agrega a la tabla ˋusersˋ 4 datos en 2 columnas
 de datos ˋnameˋ y ˋageˋ respectivamente en cada uno.
 

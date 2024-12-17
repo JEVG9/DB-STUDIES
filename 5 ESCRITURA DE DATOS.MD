@@ -291,13 +291,3 @@ DELETE FROM empleados WHERE departamento = 'Ventas';
 ROLLBACK; -- Deshacer los cambios
 ```
 
-##
-##
-##
-##
-##
-##
-##
-##
-##
-##
